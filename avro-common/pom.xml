@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.ericsson.component.aia.common.avro</groupId>
+    <artifactId>avro-support</artifactId>
+    <version>3.0.29-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>avro-common</artifactId>
+  <name>[${project.parent.artifactId}] ${project.artifactId} module</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.avro</groupId>
+      <artifactId>avro</artifactId>
+      <version>${version.avro}</version>
+    </dependency>
+
+    <!-- Test dependencies -->
+    <dependency>
+      <groupId>com.ericsson.component.aia.model</groupId>
+      <artifactId>schema-registry-client</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

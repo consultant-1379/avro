@@ -1,0 +1,116 @@
+{
+  "type": "record",
+  "name": "SAMPLE_SCHEMA",
+  "namespace": "some.namespace.value",
+  "fields": [
+    {
+      "name": "_NE",
+      "type": "string"
+    },
+    {
+      "name": "_TIMESTAMP",
+      "type": "long"
+    },
+    {
+      "name": "TIMESTAMP_HOUR",
+      "type": "int"
+    },
+    
+    
+    {
+      "name": "NULL_BYTES",
+      "type": "bytes"
+    },
+    {
+      "name": "EMPTY_BYTES",
+      "type": "bytes"
+    },
+    {
+      "name": "SOME_BYTES",
+      "type": "bytes"
+    },
+    {
+      "name": "NULL_STRING",
+      "type": "string"
+    },
+    {
+      "name": "EMPTY_STRING",
+      "type": "string"
+    },
+    {
+      "name": "SOME_STRING",
+      "type": "string"
+    },
+    {
+      "name": "NULL_INT",
+      "type": "int"
+    },
+    {
+      "name": "EMPTY_INT",
+      "type": "int"
+    },
+    {
+      "name": "SOME_INT",
+      "type": "int"
+    },
+    {
+      "name": "NULL_LONG",
+      "type": "long"
+    },
+    {
+      "name": "EMPTY_LONG",
+      "type": "long"
+    },
+    {
+      "name": "SOME_LONG",
+      "type": "long"
+    },
+    {
+      "name": "NULL_FLOAT",
+      "type": "float"
+    },
+    {
+      "name": "EMPTY_FLOAT",
+      "type": "float"
+    },
+    {
+      "name": "SOME_FLOAT",
+      "type": "float"
+    },
+    {
+      "name": "NULL_DOUBLE",
+      "type": "double"
+    },
+    {
+      "name": "EMPTY_DOUBLE",
+      "type": "double"
+    },
+    {
+      "name": "SOME_DOUBLE",
+      "type": "double"
+    },
+    {
+      "name": "NULL_BOOLEAN",
+      "type": "boolean"
+    },
+    {
+      "name": "EMPTY_BOOLEAN",
+      "type": "boolean"
+    },
+    {
+      "name": "SOME_BOOLEAN",
+      "type": "boolean"
+    },
+    {
+      "name": "NULL_NULL",
+      "type": "null"
+    },
+    {"name" : "address", 
+     "type" : {
+                "type" : "record",
+                "name" : "SOME_RECORD",
+                "fields" : []
+              }
+    }
+  ]
+}

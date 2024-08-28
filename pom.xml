@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  
+  <parent>
+    <groupId>com.ericsson.aia</groupId>
+    <artifactId>integration</artifactId>
+    <version>1.0.48</version>
+  </parent>
+
+  <groupId>com.ericsson.component.aia.common.avro</groupId>
+  <artifactId>avro-support</artifactId>
+  <version>3.0.29-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>[${project.artifactId}] project</name>
+
+  <scm>
+    <developerConnection>${ericsson.scm.url}</developerConnection>
+    <tag>avro-support-3.0.0</tag>
+  </scm>
+
+  <properties>
+    <version.netty>4.0.31.Final</version.netty>
+    <version.pojo>3.0.19</version.pojo>
+    <version.schema-registry-client>3.0.27</version.schema-registry-client>
+    <version.java>1.7</version.java>
+    <git.repository>AIA/common/transport/avro</git.repository>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.ericsson.component.aia.model</groupId>
+        <artifactId>schema-registry-client</artifactId>
+        <version>${version.schema-registry-client}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ericsson.component.aia.common.avro</groupId>
+        <artifactId>avro-decoder</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-buffer</artifactId>
+        <version>${version.netty}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ericsson.component.aia.model</groupId>
+        <artifactId>pojo</artifactId>
+        <version>${version.pojo}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.ericsson.component.aia.common.avro</groupId>
+        <artifactId>avro-common</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.avro</groupId>
+        <artifactId>avro</artifactId>
+        <version>${version.avro}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.kafka</groupId>
+        <artifactId>kafka_${scala.version}</artifactId>
+        <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>${version.java}</source>
+          <target>${version.java}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <configuration>
+          <failOnViolation>false</failOnViolation>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>check-style</id>
+            <configuration>
+              <failsOnError>false</failsOnError>
+              <failOnViolation>false</failOnViolation>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <modules>
+    <module>avro-decoder</module>
+    <module>kafka-avro-decoder</module>
+    <module>avro-common</module>
+  </modules>
+
+</project>
